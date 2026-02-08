@@ -31,7 +31,7 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'glass-card border-b py-3'
+          ? 'glass-card py-3'
           : 'py-5 bg-transparent'
       )}
     >
@@ -80,7 +80,7 @@ export function Header() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          'md:hidden absolute top-full left-0 right-0 glass-card border-b overflow-hidden transition-all duration-300',
+          'md:hidden absolute top-full left-0 right-0 glass-card overflow-hidden transition-all duration-300',
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         )}
       >
