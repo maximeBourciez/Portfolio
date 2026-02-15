@@ -213,23 +213,29 @@ export const projects: Project[] = [
 
 export const skills: Skill[] = [
   // Frontend
-  { name: "HTML5", icon: "html5", level: 5, category: "frontend" },
-  { name: "CSS3", icon: "css3", level: 5, category: "frontend" },
+  { name: "HTML5", icon: "html5", level: 4, category: "frontend" },
+  { name: "CSS3", icon: "css3", level: 4, category: "frontend" },
   { name: "JavaScript", icon: "javascript", level: 4, category: "frontend" },
   { name: "TypeScript", icon: "typescript", level: 4, category: "frontend" },
-  { name: "React", icon: "react", level: 4, category: "frontend" },
-  { name: "Tailwind CSS", icon: "tailwind", level: 4, category: "frontend" },
+  { name: "React", icon: "react", level: 2, category: "frontend" },
+  { name: "Bootstrap CSS", icon: "bootstrap", level: 4, category: "frontend" },
+  { name: "Vue.js", icon: "vuejs", level: 4, category: "frontend" },
+  { name: "Angular", icon: "angular", level: 3, category: "frontend" },
   
   // Backend
-  { name: "Node.js", icon: "nodejs", level: 3, category: "backend" },
-  { name: "Python", icon: "python", level: 3, category: "backend" },
-  { name: "SQL", icon: "database", level: 3, category: "backend" },
-  { name: "PHP", icon: "php", level: 2, category: "backend" },
+  { name: "Express.js", icon: "expressjs", level: 3, category: "backend" },
+  { name: "Django", icon: "django", level: 3, category: "backend" },
+  { name: "SQL", icon: "database", level: 4, category: "backend" },
+  { name: "PHP", icon: "php", level: 4, category: "backend" },
+  { name: "Java Tomcat", icon: "java", level: 4, category: "backend" },
+  { name: "Laravel", icon: "php", level: 3, category: "backend" },
   
   // Tools
   { name: "Git", icon: "git", level: 4, category: "tools" },
+  { name: "Docker", icon: "docker", level: 3, category: "tools" },
   { name: "VS Code", icon: "vscode", level: 5, category: "tools" },
   { name: "Figma", icon: "figma", level: 3, category: "tools" },
+  { name: "Jira", icon: "jira", level: 3, category: "tools" },
   { name: "Linux", icon: "linux", level: 3, category: "tools" },
 ];
 

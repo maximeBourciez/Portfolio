@@ -2,15 +2,11 @@ import { Skill } from '@/data/portfolio';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { cn } from '@/lib/utils';
 import { 
-  Code, 
-  Database, 
-  GitBranch, 
   Palette, 
-  Terminal,
-  Globe,
+  Server, 
+  Wrench,
   Layers,
-  Server,
-  Wrench
+  LucideIcon
 } from 'lucide-react';
 
 interface SkillCardProps {
@@ -18,51 +14,36 @@ interface SkillCardProps {
   index: number;
 }
 
-const categoryIcons: Record<string, React.ReactNode> = {
-  frontend: <Code className="w-5 h-5" />,
-  backend: <Server className="w-5 h-5" />,
-  tools: <Wrench className="w-5 h-5" />,
-  other: <Layers className="w-5 h-5" />,
-};
-
-const skillIcons: Record<string, React.ReactNode> = {
-  html5: <Globe className="w-6 h-6" />,
-  css3: <Palette className="w-6 h-6" />,
-  javascript: <Code className="w-6 h-6" />,
-  typescript: <Code className="w-6 h-6" />,
-  react: <Layers className="w-6 h-6" />,
-  tailwind: <Palette className="w-6 h-6" />,
-  nodejs: <Server className="w-6 h-6" />,
-  python: <Terminal className="w-6 h-6" />,
-  database: <Database className="w-6 h-6" />,
-  php: <Code className="w-6 h-6" />,
-  git: <GitBranch className="w-6 h-6" />,
-  vscode: <Code className="w-6 h-6" />,
-  figma: <Palette className="w-6 h-6" />,
-  linux: <Terminal className="w-6 h-6" />,
+const categoryIcons: Record<string, LucideIcon> = {
+  frontend: Palette,
+  backend: Server,
+  tools: Wrench,
+  other: Layers,
 };
 
 export function SkillCard({ skill, index }: SkillCardProps) {
-  const [ref, isVisible] = useScrollAnimation<HTMLDivElement>();
-  const Icon = skillIcons[skill.icon] || <Code className="w-6 h-6" />;
+  const [ref, isVisible] = useScrollAnimation();
 
   return (
     <div
       ref={ref}
       className={cn(
-        'glass-card p-4 flex flex-col items-center gap-3 transition-all duration-500',
-        'hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1',
-        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'
+        "bg-card rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg",
+        isVisible ? "animate-fade-in-up" : "opacity-0",
       )}
-      style={{ transitionDelay: `${index * 50}ms` }}
+      style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Icon */}
-      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-        {Icon}
+      <div className="mb-4 text-primary">
+        <img 
+          src={`/icons/${skill.icon}.svg`} 
+          alt={skill.name}
+          className="w-8 h-8 object-contain"
+        />
       </div>
 
       {/* Name */}
-      <span className="text-sm font-medium text-center">{skill.name}</span>
+      <h3 className="font-semibold mb-3 text-foreground">{skill.name}</h3>
 
       {/* Level Indicator */}
       <div className="flex gap-1">
@@ -70,8 +51,10 @@ export function SkillCard({ skill, index }: SkillCardProps) {
           <div
             key={i}
             className={cn(
-              'w-2 h-2 rounded-full transition-colors',
-              i < skill.level ? 'bg-primary' : 'bg-muted'
+              "h-1.5 flex-1 rounded-full transition-all duration-300",
+              i < skill.level
+                ? "bg-primary"
+                : "bg-muted"
             )}
           />
         ))}
@@ -87,12 +70,14 @@ interface SkillCategoryProps {
 }
 
 export function SkillCategory({ category, title }: SkillCategoryProps) {
+  const CategoryIcon = categoryIcons[category];
+  
   return (
-    <div className="flex items-center gap-2 mb-4">
-      <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
-        {categoryIcons[category]}
+    <div className="flex items-center gap-3 mb-6">
+      <div className="text-primary">
+        <CategoryIcon className="w-5 h-5" />
       </div>
-      <h3 className="text-lg font-semibold">{title}</h3>
+      <h2 className="text-2xl font-bold text-foreground">{title}</h2>
     </div>
   );
 }
