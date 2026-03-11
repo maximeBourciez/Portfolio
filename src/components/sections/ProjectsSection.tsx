@@ -150,7 +150,7 @@ export function ProjectsSection() {
             </div>
           )}
         </div>
-      </div> sdqsdqd
+      </div>
     </section>
   );
 }

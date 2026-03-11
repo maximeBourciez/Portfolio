@@ -11,10 +11,21 @@ export function Footer() {
     <footer className="py-8 border-t border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          
           {/* Copyright */}
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Fait avec <Heart className="w-4 h-4 text-primary fill-primary" /> 
+          <p className="text-sm text-muted-foreground flex items-center gap-1 flex-wrap justify-center md:justify-start">
+            Fait avec <Heart className="w-4 h-4 text-primary fill-primary" />
             {' '}© {new Date().getFullYear()}
+            <span className="mx-1">•</span>
+            Hébergé par{' '}
+            <a
+              href="https://www.bh-informatique.com/accueil.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              BH Informatique
+            </a>
           </p>
 
           {/* Social Links */}
@@ -41,6 +52,7 @@ export function Footer() {
             Retour en haut
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
           </button>
+
         </div>
       </div>
     </footer>
