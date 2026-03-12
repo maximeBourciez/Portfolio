@@ -17,7 +17,7 @@ export interface Skill {
   name: string;
   icon: string;
   level: number; // 1-5
-  category: 'frontend' | 'backend' | 'tools' | 'other';
+  category: 'frontend' | 'backend' | 'systems' | 'tools' | 'other';
 }
 
 export interface Education {
@@ -49,12 +49,15 @@ export const personalInfo = {
   subtitle: "IUT de Bayonne et du Pays Basque",
   email: "maxime.bourciez@gmail.com",
   location: "Urrugne, France",
-  bio: `Passionné par le développement informatique, je suis actuellement étudiant en informatique à l’IUT de Bayonne et du Pays Basque. J’aime concevoir des interfaces modernes, claires et intuitives, avec une attention particulière portée à l’expérience utilisateur et à la qualité du code.
-      Au fil de mes projets, j’ai travaillé aussi bien sur le front-end que sur le back-end, en développant des applications web complètes, des APIs et des outils orientés métier. J’accorde beaucoup d’importance à la structuration des projets, à la maintenabilité et aux bonnes pratiques, que ce soit côté performance, accessibilité ou organisation du code.
-      Curieux et en apprentissage constant, je prends plaisir à explorer de nouvelles technologies et à améliorer mes compétences à travers des projets concrets, souvent liés à des besoins réels. Mon objectif est de devenir un développeur web full-stack polyvalent, capable de concevoir, développer et faire évoluer des applications web performantes, fiables et accessibles.`,
+  telephone: "+33 7 69 62 61 95",
+  bio: `Passionné par le développement informatique, je suis étudiant en informatique à l’IUT de Bayonne et du Pays Basque. Je conçois des applications web modernes en portant une attention particulière à l’expérience utilisateur, à la qualité du code et à la maintenabilité des projets.
+
+Au fil de mes projets et de mon stage, j’ai travaillé aussi bien sur le front-end que sur le back-end, en développant des applications web complètes, des APIs et des outils orientés métier. J’ai également participé au développement de systèmes de communication avec des équipements connectés et à l’intégration de solutions autour de la plateforme Synapse.
+
+Curieux et en apprentissage constant, j’aime découvrir de nouvelles technologies et améliorer mes compétences à travers des projets concrets. Mon objectif est de devenir un développeur full-stack capable de concevoir des applications fiables, performantes et utiles.`,
   shortBio: "Étudiant passionné par le développement informatique, je crée des interfaces modernes et intuitives.",
-  resumeUrl: "#", 
-  avatarUrl: "/profile_pic.JPEG", 
+  resumeUrl: "/resume.pdf",
+  avatarUrl: "/profile_pic.JPEG",
 };
 
 // ============================================
@@ -135,21 +138,7 @@ export const projects: Project[] = [
       "Cette application personnelle a pour objectif de simplifier la création de devis dans le secteur du bâtiment. Elle permet une saisie structurée des lots, postes et articles, avec des calculs automatiques des quantités et des montants. Les devis peuvent être exportés en PDF ou Excel, et les données sont sauvegardées afin de faciliter les modifications et le suivi des projets. Une attention particulière a été portée à l’ergonomie et à la clarté de l’interface.",
     image: "/projects/batiment.png",
     technologies: ["PHP", "MySQL", "Vue.js (CDN)", "Bootstrap"],
-    githubUrl: "https://github.com/username/economie-batiment",
     featured: true,
-  },
-  {
-    id: "3",
-    projectType: "Personnel",
-    title: "Portfolio développeur",
-    description:
-      "Portfolio personnel présentant mes projets, compétences et expériences en développement web.",
-    longDescription:
-      "Ce portfolio a été conçu pour mettre en avant mes projets professionnels, personnels et universitaires. Il intègre des animations, un carrousel de projets, une interface moderne et responsive, ainsi qu’une attention particulière à l’expérience utilisateur. Le projet évolue régulièrement afin de refléter mes nouvelles compétences et expérimentations techniques.",
-    image: "/projects/portfolio.png",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    githubUrl: "https://github.com/username/portfolio",
-    featured: false,
   },
   {
     id: "4",
@@ -161,30 +150,31 @@ export const projects: Project[] = [
       "Projet réalisé dans un cadre universitaire visant à concevoir une application web complète. Elle permet aux utilisateurs de consulter des fiches de films et séries, de publier des avis et d’échanger via un forum développé sur mesure. Ce projet m’a permis de travailler sur la structuration d’une application MVC, la gestion des utilisateurs et l’interaction avec une base de données.",
     image: "/projects/vhs.png",
     technologies: ["PHP", "Twig", "MySQL", "Bootstrap", "JavaScript"],
+    githubUrl: "https://github.com/maximeBourciez/VideoHomeShare-Groupe5",
     featured: false,
   },
   {
     id: "5",
     projectType: "Universitaire",
-    title: "API REST de gestion de données",
+    title: "BDEGoodies",
     description:
-      "API RESTful avec authentification et gestion sécurisée des ressources.",
+      "Application web de gestion d’événements et de stock pour une association étudiante.",
     longDescription:
-      "Cette API REST a été développée dans le cadre de mes études afin de comprendre les principes des architectures orientées services. Elle propose une authentification sécurisée, une gestion des rôles et une documentation des endpoints. Le projet m’a permis de renforcer mes compétences côté back-end et en conception d’API.",
-    image: "/projects/api.png",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
-    githubUrl: "https://github.com/username/api-rest",
+      "Ce projet universitaire consistait à développer une application web pour une association étudiante, permettant de gérer les soirées organisées ainsi que le stock de goodies. L’application offre des fonctionnalités de création d’événements, de gestion des participants, et de suivi du stock avec des alertes de réapprovisionnement. Ce projet m’a permis de renforcer mes compétences en développement full-stack et en gestion de projet.",
+    image: "/projects/bde-goodies.png",
+    technologies: ["Laravel", "Angular"],
+    githubUrl: "https://github.com/maximeBourciez/BDEGoodies",
     featured: false,
   },
   {
     id: "6",
-    projectType: "Professionnel",
+    projectType: "Stage - Terawatt",
     title: "Carte interactive des agences",
     description:
       "Affichage dynamique d’agences sur une carte avec marqueurs personnalisés.",
     longDescription:
       "Ce projet consiste à afficher une liste d’agences sur une carte interactive centrée sur la France. Les données sont lues depuis un fichier JSON et chaque agence est représentée par un marqueur personnalisé avec tooltip au survol. Ce travail m’a permis de renforcer mes compétences en JavaScript, et d'apprendre la création de plugins WordPress.",
-    image: "/projects/map-agencies.png",
+    image: "/projects/carte-agences.png",
     technologies: ["WordPress", "JavaScript", "Leaflet.js", "JSON", "PHP"],
     githubUrl: "https://github.com/username/map-agencies",
     featured: false,
@@ -202,6 +192,18 @@ export const projects: Project[] = [
     technologies: ["Java", "API REST", "PostgreSQL", "JSON", "Vue.js (CDN)", "Bootstrap", "Linux"],
     featured: true,
   },
+  {
+    id: "8",
+    projectType: "Alternance - Terawatt",
+    title: "Mode de communication Sortant",
+    description:
+      "Développement d’un mode de communication pour l’envoi de données à des systèmes distants.",
+    longDescription:
+      "Conception et développement d’un mode de communication sortant permettant d’envoyer des données structurées à des systèmes distants via des protocoles sécurisés. Ce projet m’a permis de travailler sur la sécurisation des échanges, la structuration des données et l’intégration avec des systèmes tiers, dans un contexte industriel exigeant.",
+    image: "/projects/communication.png",
+    technologies: ["Java", "C++", "bash", "JavaScript", "WebSockets", "SSH"],
+    featured: true,
+  }
 
 
 ];
@@ -221,15 +223,22 @@ export const skills: Skill[] = [
   { name: "Bootstrap CSS", icon: "bootstrap", level: 4, category: "frontend" },
   { name: "Vue.js", icon: "vuejs", level: 4, category: "frontend" },
   { name: "Angular", icon: "angular", level: 3, category: "frontend" },
-  
+
   // Backend
-  { name: "Express.js", icon: "expressjs", level: 3, category: "backend" },
+  { name: "Express.js", icon: "express-js", level: 3, category: "backend" },
   { name: "Django", icon: "django", level: 3, category: "backend" },
-  { name: "SQL", icon: "database", level: 4, category: "backend" },
+  { name: "SQL", icon: "sql", level: 4, category: "backend" },
   { name: "PHP", icon: "php", level: 4, category: "backend" },
-  { name: "Java Tomcat", icon: "java", level: 4, category: "backend" },
-  { name: "Laravel", icon: "php", level: 3, category: "backend" },
-  
+  { name: "Apache Tomcat", icon: "tomcat", level: 4, category: "backend" },
+  { name: "Laravel", icon: "laravel", level: 3, category: "backend" },
+
+  // Systèmes
+  { name: "C", icon: "c", level: 3, category: "systems" },
+  { name: "C++", icon: "cpp", level: 3, category: "systems" },
+  { name: "Java", icon: "java", level: 4, category: "systems" }, // déplace depuis backend
+  { name: "WebSockets", icon: "websocket", level: 3, category: "systems" },
+  { name: "Socket.io", icon: "socketio", level: 3, category: "systems" },
+
   // Tools
   { name: "Git", icon: "git", level: 4, category: "tools" },
   { name: "Docker", icon: "docker", level: 3, category: "tools" },

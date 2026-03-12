@@ -8,11 +8,13 @@ export function SkillsSection() {
 
   const frontendSkills = skills.filter(s => s.category === 'frontend');
   const backendSkills = skills.filter(s => s.category === 'backend');
+  const systemsSkills = skills.filter(s => s.category === 'systems');
   const toolsSkills = skills.filter(s => s.category === 'tools');
 
   const categories = [
     { key: 'frontend' as const, title: 'Frontend', skills: frontendSkills },
     { key: 'backend' as const, title: 'Backend', skills: backendSkills },
+    { key: 'systems' as const, title: 'Systèmes', skills: systemsSkills },
     { key: 'tools' as const, title: 'Outils & Autres', skills: toolsSkills },
   ];
 

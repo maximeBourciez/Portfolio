@@ -17,6 +17,7 @@ interface SkillCardProps {
 const categoryIcons: Record<string, LucideIcon> = {
   frontend: Palette,
   backend: Server,
+  systems: Server,
   tools: Wrench,
   other: Layers,
 };
@@ -65,7 +66,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
 
 // Category Header Component
 interface SkillCategoryProps {
-  category: 'frontend' | 'backend' | 'tools' | 'other';
+  category: 'frontend' | 'backend' | 'systems' | 'tools' | 'other';
   title: string;
 }
 

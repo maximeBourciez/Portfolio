@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Mail, MapPin, Loader2 } from 'lucide-react';
+import { Send, Mail, MapPin, Loader2, Phone } from 'lucide-react';
 import { personalInfo, socialLinks } from '@/data/portfolio';
 import { SocialIcon } from '@/components/SocialIcon';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -89,6 +89,17 @@ export function ContactSection() {
                 <div>
                   <p className="text-sm text-muted-foreground">Localisation</p>
                   <p className="font-medium">{personalInfo.location}</p>
+                </div>
+              </div>
+
+              {/* Téléphone */}
+              <div className="glass-card p-4 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Téléphone</p>
+                  <p className="font-medium">{personalInfo.telephone}</p>
                 </div>
               </div>
 
