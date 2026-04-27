@@ -36,13 +36,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => handleNavClick('#hero')}
-          className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
-        >
-          Portfolio
-        </button>
+        <img src="/MB_Logo_dark_nobg.png" alt="Logo" className="h-12 w-auto"  onClick={() => handleNavClick('#hero')} />
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
